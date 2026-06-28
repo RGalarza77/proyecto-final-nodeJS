@@ -8,12 +8,12 @@ import {addDoc, deleteDoc, getDoc, getDocs, updateDoc,
 //Coleccion
 const productsCollection = collection(dataBase, "products");
 
-//CRUD - create, read, update, delete
+/**CRUD - create, read, update, delete**/
 
+//Leer
 
-
-export const getProducts = async () => {
-  const snapshot = await getDocs(productsCollection);
+export const getAllProducts = async () => {
+  const snapshot = await getDocs(productsCollection); /*Captura lo que esta en la DB*/
 
   const products = [];
 
@@ -25,4 +25,13 @@ export const getProducts = async () => {
   });
 
   return products;
+};
+
+export const getProductById = async (id) =>{
+    const ref = doc(productsCollection, id); /*Referencia del producto en la DB*/
+    const snapshot = await getDoc(ref); /*Paso la ref para obtener el producto*/
+
+    if(!snapshot.exists()) return null; /*Si no existe el doc, devuelve null*/
+
+    return{id: snapshot.id, ...snapshot.data()}; /*Si existe, devuelve el objeto*/
 };

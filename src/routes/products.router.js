@@ -1,13 +1,16 @@
 import {Router} from "express";
 
 //Controllers
-import {getAllProducts} from "../controllers/products.controller.js";
+import {getAllProducts, getProductById} from "../controllers/products.controller.js";
 
 
 
 const router= Router();
 
-router.get("/", getAllProducts); /*Prefijo: "/api/products"*/
+//Prefijo: "/api/products"
+router.get("/", getAllProducts); 
+router.get("/:id", getProductById);
+
 
 
 export default router;
