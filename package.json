@@ -1,0 +1,29 @@
+{
+  "name": "proyecto-final-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rodrigo Galarza",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/RGalarza77/proyecto-final-nodeJS/issues"
+  },
+  "homepage": "https://github.com/RGalarza77/proyecto-final-nodeJS#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase": "^12.15.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RGalarza77/proyecto-final-nodeJS.git"
+  }
+}
