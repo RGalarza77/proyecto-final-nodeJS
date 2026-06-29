@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/RGalarza77/proyecto-final-nodeJS#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "firebase": "^12.15.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RGalarza77/proyecto-final-nodeJS.git"

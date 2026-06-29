@@ -10,8 +10,18 @@ const productsCollection = collection(dataBase, "products");
 
 /**CRUD - create, read, update, delete**/
 
-//Leer
+//Crear
+export const createProduct = async (product) =>{
+    const ref = await addDoc(productsCollection, product); 
 
+    return{
+        id: ref.id,
+        ...product,
+    };
+
+};
+
+//Leer
 export const getAllProducts = async () => {
   const snapshot = await getDocs(productsCollection); /*Captura lo que esta en la DB*/
 
@@ -35,3 +45,4 @@ export const getProductById = async (id) =>{
 
     return{id: snapshot.id, ...snapshot.data()}; /*Si existe, devuelve el objeto*/
 };
+
