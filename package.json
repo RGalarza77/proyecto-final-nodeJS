@@ -25,5 +25,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RGalarza77/proyecto-final-nodeJS.git"
-  }
+  },
+  "devDependencies": {}
 }
