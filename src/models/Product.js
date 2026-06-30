@@ -46,3 +46,32 @@ export const getProductById = async (id) =>{
     return{id: snapshot.id, ...snapshot.data()}; /*Si existe, devuelve el objeto*/
 };
 
+//Actualizar
+export const updateProduct = async (id, product) =>{
+
+  const ref= doc(productsCollection, id);
+  const snapshot = await getDoc(ref); /*Foto del producto en la DB*/
+
+  if(!snapshot.exists()) return null;
+
+  await updateDoc(ref, product);
+  
+  return{id, ...product};
+
+};
+
+//Eliminar
+export const deleteProduct = async (id) => {
+
+  const ref= doc(productsCollection, id);
+  const snapshot = await getDoc(ref);
+
+  if(!snapshot.exists()) return null;
+
+  const deletedProduct = {id, ...snapshot.data()};
+
+  await deleteDoc(ref);
+
+  return deletedProduct;
+
+};
